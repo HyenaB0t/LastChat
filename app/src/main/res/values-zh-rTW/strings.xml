@@ -638,7 +638,7 @@
   <string name="setting_page_built_in_tools_url_context">URL 上下文</string>
   <string name="setting_page_built_in_tools_url_context_desc">啟用 URL 內容處理</string>
   <string name="setting_page_built_in_tools_grok_web_search">Grok 網頁搜尋</string>
-  <string name="setting_page_built_in_tools_grok_web_search_desc">啟用 xAI 內建網頁搜尋（僅限 api.x.ai）</string>
+  <string name="setting_page_built_in_tools_grok_web_search_desc">啟用 xAI 內建網頁搜尋（第三方中轉可能不支援）</string>
   <string name="setting_page_built_in_tools_grok_x_search">Grok X 搜尋</string>
   <string name="setting_page_built_in_tools_grok_x_search_desc">啟用 xAI 內建 X（Twitter）搜尋</string>
   <string name="setting_page_chat_settings">聊天設定</string>
@@ -1747,6 +1747,7 @@
   <string name="request_log_source_tool_result_rag">工具結果檢索</string>
   <string name="request_log_source_translation">翻譯</string>
   <string name="request_log_source_ocr">OCR</string>
+  <string name="request_log_source_document_summary">檔案摘要</string>
   <string name="request_log_source_scheduled_message">定時訊息</string>
   <string name="request_log_source_spontaneous">主動通知</string>
   <string name="request_log_source_model_name_generation">模型名稱生成</string>
@@ -1795,6 +1796,12 @@
   <string name="context_image_archive_disabled">保留所有圖片上下文</string>
   <string name="context_image_archive_after">超過 %d 則訊息後歸檔圖片</string>
   <string name="context_image_archive_desc">超出閾值的舊圖片將替換為 OCR 文字以節省上下文 Token。需要在設定中配置 OCR 模型。</string>
+
+  <!-- Document Archiving -->
+  <string name="context_doc_archive_title">檔案歸檔</string>
+  <string name="context_doc_archive_disabled">保留所有檔案內容</string>
+  <string name="context_doc_archive_after">超過 %d 則訊息後歸檔檔案</string>
+  <string name="context_doc_archive_desc">超出閾值的舊檔案將替換為 AI 摘要以節省上下文 Token。摘要會在歸檔前於背景預先產生。需要配置上下文摘要模型。</string>
 
   <!-- Context Refresh -->
   <string name="context_refresh_title">對話摘要</string>
@@ -2044,5 +2051,38 @@
     <string name="quota_detail_used">已用</string>
     <string name="quota_detail_limit">限額</string>
     <string name="quota_detail_next_reset">下次重置</string>
+    <string name="quota_source_title">限額來源</string>
+    <string name="quota_source_none">不限制</string>
+    <string name="quota_source_none_desc">這個模型不會計入 Token 限額。</string>
+    <string name="quota_source_none_option_desc">關閉這個模型的 Token 限額。</string>
+    <string name="quota_source_single">單獨限額</string>
+    <string name="quota_source_single_desc">這個模型使用自己的 Token 限制。</string>
+    <string name="quota_source_single_option_desc">只為這個模型設定限額。</string>
+    <string name="quota_source_group">限額組：%1$s</string>
+    <string name="quota_source_group_desc">這個模型優先使用組限額，單獨限額會保留但暫不生效。</string>
+    <string name="quota_source_group_option">加入限額組</string>
+    <string name="quota_source_group_option_desc">和這個提供商下的其他模型共享一套限額。</string>
+    <string name="quota_source_group_current">正在使用 %1$s</string>
+    <string name="quota_group_default_name">限額組</string>
+    <string name="quota_group_name_format">%1$s 組</string>
+    <string name="quota_group_select_title">限額組</string>
+    <string name="quota_group_select_desc">為這個模型選擇或新建一個限額組。</string>
+    <string name="quota_group_manage_title">管理限額組</string>
+    <string name="quota_group_create">新建限額組</string>
+    <string name="quota_group_empty">還沒有限額組。</string>
+    <string name="quota_group_missing">這個限額組已不存在。</string>
+    <string name="quota_group_basic_info">基本資訊</string>
+    <string name="quota_group_name">組名</string>
+    <string name="quota_group_model_count">%1$d 個模型</string>
+    <string name="quota_group_summary">%1$d 個模型 · %2$s / %3$s tokens</string>
+    <string name="quota_group_active_title">目前限額組</string>
+    <string name="quota_group_active_desc">組限額會覆蓋這個模型的單獨限額。</string>
+    <string name="quota_group_leave">移出限額組</string>
+    <string name="quota_group_models_title">組內模型</string>
+    <string name="quota_group_models_desc">同一個提供商下，一個模型只能加入一個限額組。</string>
+    <string name="quota_group_in_other_group">已在 %1$s。選擇後會移動到這裡。</string>
+    <string name="quota_group_keep_one_model">組內至少保留一個模型。</string>
+    <string name="quota_group_delete">刪除限額組</string>
+    <string name="quota_group_delete_confirm">刪除這個限額組嗎？模型會保留各自的單獨限額設定。</string>
 
 </resources>
